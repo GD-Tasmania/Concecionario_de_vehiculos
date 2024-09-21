@@ -1,5 +1,46 @@
 package Model;
 
-public class Automovil {
+public class Automovil extends Vehiculo {
+	private int numeroPuertas;
+	private String tipoCombustible;
+	private String trasmision;
+	private String traccion;
+
+	public Automovil(String marca, String modelo, int año, int numeroPuertas, String tipoCombustible, String trasmision, String traccion) {
+		super(marca, modelo, año);
+		this.numeroPuertas = numeroPuertas;
+		this.tipoCombustible = tipoCombustible;
+		this.trasmision = trasmision;
+		this.traccion = traccion;
+	}
+
+	public int getNumeroPuertas() {
+		return numeroPuertas;
+	}
+	public void setNumeroPuertas(int numeroPuertas) {
+		this.numeroPuertas = numeroPuertas;
+	}
+
+	public String getTipoCombustible() {
+		return tipoCombustible;
+	}
+	public void setTipoCombustible(String tipoCombustible) {
+		this.tipoCombustible = tipoCombustible;
+	}
+
+	public String getTrasmision() {
+		return trasmision;
+	}
+	public void setTrasmision(String trasmision) {
+		this.trasmision = trasmision;
+	}
+
+	public String getTraccion() {
+		return traccion;
+	}
+	public void setTraccion(String traccion) {
+		this.traccion = traccion;
+	}
+	
 
 }
