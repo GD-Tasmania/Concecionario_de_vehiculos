@@ -6,8 +6,8 @@ public class Motocicleta extends Vehiculo {
 	private String tipoFreno;
 	private double cilindraje;
 	
-	public Motocicleta(String marca, String modelo, int año, String tipoManillar, int numeroRuedas, String tipoFreno, double cilindraje) {
-		super(marca, modelo, año);
+	public Motocicleta(String marca, String modelo, int año, String placa, String tipoManillar, int numeroRuedas, String tipoFreno, double cilindraje) {
+		super(marca, modelo, año, placa);
 		this.tipoManillar = tipoManillar;
 		this.numeroRuedas = numeroRuedas;
 		this.tipoFreno = tipoFreno;
@@ -41,4 +41,12 @@ public class Motocicleta extends Vehiculo {
 	public void setCilindraje(double cilindraje) {
 		this.cilindraje = cilindraje;
 	}
+
+	@Override
+	public String toString() {
+		String datosVehiculo = super.toString();
+		return datosVehiculo + "Motocicleta [tipoManillar=" + tipoManillar + ", numeroRuedas=" + numeroRuedas + ", tipoFreno=" + tipoFreno + ", cilindraje=" + cilindraje + "]";
+	}
+	
+	
 }

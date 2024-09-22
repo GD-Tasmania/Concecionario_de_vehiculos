@@ -6,8 +6,8 @@ public class Camion extends Vehiculo {
 	private double longitud;
 	private int numeroEjes;
 	
-	public Camion(String marca, String modelo, int año, double capacidadCarga, String tipoCamion, double longitud, int numeroEjes) {
-		super(marca, modelo, año);
+	public Camion(String marca, String modelo, int año, String placa, double capacidadCarga, String tipoCamion, double longitud, int numeroEjes) {
+		super(marca, modelo, año, placa);
 		this.capacidadCarga = capacidadCarga;
 		this.tipoCamion = tipoCamion;
 		this.longitud = longitud;
@@ -40,6 +40,12 @@ public class Camion extends Vehiculo {
 	}
 	public void setNumeroEjes(int numeroEjes) {
 		this.numeroEjes = numeroEjes;
+	}
+
+	@Override
+	public String toString() {
+		String datosVehiculo = super.toString();
+		return datosVehiculo + "Camion [capacidadCarga=" + capacidadCarga + ", tipoCamion=" + tipoCamion + ", longitud=" + longitud + ", numeroEjes=" + numeroEjes + "]";
 	}
 	
 }

@@ -37,4 +37,10 @@ public class Cliente {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
+
+	@Override
+	public String toString() {
+		return "Cliente [nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono + ", correo=" + correo + "]";
+	}
+	
 }

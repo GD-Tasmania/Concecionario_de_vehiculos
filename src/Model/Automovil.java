@@ -6,8 +6,8 @@ public class Automovil extends Vehiculo {
 	private String trasmision;
 	private String traccion;
 
-	public Automovil(String marca, String modelo, int año, int numeroPuertas, String tipoCombustible, String trasmision, String traccion) {
-		super(marca, modelo, año);
+	public Automovil(String marca, String modelo, int año, String placa, int numeroPuertas, String tipoCombustible, String trasmision, String traccion) {
+		super(marca, modelo, año, placa);
 		this.numeroPuertas = numeroPuertas;
 		this.tipoCombustible = tipoCombustible;
 		this.trasmision = trasmision;
@@ -41,6 +41,10 @@ public class Automovil extends Vehiculo {
 	public void setTraccion(String traccion) {
 		this.traccion = traccion;
 	}
-	
 
+	@Override
+	public String toString() {
+		String datosVehiculo = super.toString();
+		return datosVehiculo+"Automovil [numeroPuertas=" + numeroPuertas + ", tipoCombustible=" + tipoCombustible + ", trasmision=" + trasmision + ", traccion=" + traccion + "]";
+	}
 }
