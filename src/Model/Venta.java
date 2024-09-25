@@ -42,4 +42,9 @@ public class Venta {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+
+	@Override
+	public String toString() {
+		return "Venta [cliente=" + cliente + ", vehiculo=" + vehiculo + ", fecha=" + fecha + ", precio=" + precio + "]";
+	}
 }

@@ -42,6 +42,10 @@ public class Mantenimiento {
 	public void setVehiculo(Vehiculo vehiculo) {
 		this.vehiculo = vehiculo;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Mantenimiento [tipoMantenimiento=" + tipoMantenimiento + ", fecha=" + fecha + ", costo=" + costo
+				+ ", vehiculo=" + vehiculo + "]";
+	}
 }

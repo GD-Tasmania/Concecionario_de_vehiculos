@@ -1,5 +1,6 @@
 package Service;
 import java.util.ArrayList;
+import java.util.Date;
 
 import Model.Cliente;
 import Model.Inventario;
@@ -98,4 +99,61 @@ public class Concecionario {
 			System.out.println(this.vehiculos);
 		}
 	}
+	
+	/* METODOS VENTAS */
+	public void registrarVenta(Venta venta) {
+		this.ventas.add(venta);
+		System.out.println("Ventas: \n"+this.ventas);
+	}
+	
+	public void consultarVentas(Cliente cliente, Vehiculo vehiculo, Date fecha, int opcion) {
+		System.out.println("---------");
+		switch (opcion) {
+		case 1:
+			for (Venta ventas : this.ventas) {
+				if(ventas.getCliente().equals(cliente)) {
+					System.out.println(ventas.toString());
+				}
+			}
+			break;
+		case 2:
+			for (Venta ventas : this.ventas) {
+				if(ventas.getVehiculo().equals(vehiculo)) {
+					System.out.println(ventas.toString());
+				}
+			}
+			break;
+		case 3:
+			for (Venta ventas : this.ventas) {
+				if(ventas.getFecha().equals(fecha)) {
+					System.out.println(ventas.toString());
+				}
+			}
+		default:
+			break;
+		}
+	}
+	
+	/* METODOS INVENTARIO */
+	public void registrarVehiculosInventario(Inventario vehiculoInventario) {
+		this.inventarios.add(vehiculoInventario);
+	}
+	
+	public void eliminarVehiculosInventario(Inventario vehiculoInventario) {
+		this.inventarios.remove(vehiculoInventario);
+	}
+	
+	/* METODOS MANTENIMIENTO */
+	public void registrarMantenimiento(Mantenimiento mantenimiento) {
+		this.mantenimientos.add(mantenimiento);
+	}
+	
+	public void consultarMantenimientos(Vehiculo vehiculo) {
+		for (Mantenimiento mantenimiento : this.mantenimientos) {
+			if(mantenimiento.getVehiculo().equals(vehiculo)) {
+				System.out.println(mantenimiento.toString());
+			}
+		}
+	}
+	
 }
