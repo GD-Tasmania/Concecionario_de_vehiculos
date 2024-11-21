@@ -121,7 +121,11 @@ public class Main {
 	public static void buscarVehiculo() {
 		String placa = JOptionPane.showInputDialog("Ingrese la placa del vehiculo:");
 		Vehiculo vehiculo = c.buscarVehiculo(placa);
-		JOptionPane.showMessageDialog(null, vehiculo.toString());
+		if(vehiculo != null) {			
+			JOptionPane.showMessageDialog(null, vehiculo.toString());
+		} else {
+			JOptionPane.showMessageDialog(null, "El vehiculo no existe");
+		}
 	}
 	
 	public static void agregarVehiculo() {
@@ -321,7 +325,11 @@ public class Main {
 			
 			JOptionPane.showMessageDialog(null, c.consultarVentas(vehiculo));
 		} else if(tipo==3) {
-			
+			int año = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el año de la venta: "));
+			int mes = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el mes de la venta (numero): "));
+			int dia = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dia de la venta: "));
+			LocalDate fecha = LocalDate.of(año, mes, dia);
+			JOptionPane.showMessageDialog(null, c.consultarVentas(fecha));
 		} else {
 			consultarVentas();
 		}
@@ -364,7 +372,7 @@ public class Main {
 	public static boolean actualizarInventario(Vehiculo vehiculo) {
 		Inventario inventario = c.buscarVehiculoInventario(vehiculo);
 		if(inventario != null) {
-			JOptionPane.showMessageDialog(null, c.actualizarInventario((inventario.getDisponibilidad()-1), inventario));
+			JOptionPane.showMessageDialog(null, c.actualizarInventario(inventario.disminuirInventario(), inventario));
 			return true;
 		} else {
 			JOptionPane.showMessageDialog(null, "El vehiculo no esta agregado en el inventario");
@@ -437,6 +445,8 @@ public class Main {
 		if(vehiculo != null) {			
 			String tipoMantenimiento = JOptionPane.showInputDialog("Ingrese el tipo de mantenimiento del vehiculo: ");
 			double costo = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el costo del mantenimiento: "));
+			costo = vehiculo.calculoCostoMantenimiento(costo);
+			
 			Mantenimiento mantenimiento = new Mantenimiento(tipoMantenimiento, costo, vehiculo);
 			JOptionPane.showMessageDialog(null, c.registrarMantenimiento(mantenimiento));
 		} else {

@@ -34,6 +34,10 @@ public class Vehiculo {
 	
 	public String getPlaca() { return placa; }
 	public void setPlaca(String placa) { this.placa = placa; }
+	
+	public double calculoCostoMantenimiento(double costo) {
+		return costo+100000;
+	}
 
 	@Override
 	public String toString() {

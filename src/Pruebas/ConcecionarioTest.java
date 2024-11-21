@@ -32,7 +32,7 @@ class ConcecionarioTest {
         //LOG.info("Fin test datosVcios");
     }
     
-    public void agregarEmpleado() {
+    public void agregarCliente() {
     	Concecionario c = new Concecionario();
     	Cliente cliente = new Cliente("Paco", "Acacias", "3298948", "paco@gmail.com");
     	
@@ -41,7 +41,7 @@ class ConcecionarioTest {
     }
     
     @Test
-    public void eliminarEmpleado() {
+    public void eliminarCliente() {
     	Concecionario c = new Concecionario();
     	Cliente cliente1 = new Cliente("Paco", "Acacias", "3298948", "paco@gmail.com");
     	Cliente cliente2 = new Cliente("Pedro", "Naranjos", "3595985", "pedro@gmail.com");
@@ -53,5 +53,4 @@ class ConcecionarioTest {
     	assertFalse(c.listaClientes().contains(cliente1));
     	assertEquals(1, c.listaClientes().size());
     }
-
 }

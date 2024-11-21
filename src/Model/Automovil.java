@@ -25,6 +25,11 @@ public class Automovil extends Vehiculo {
 
 	public String getTraccion() { return traccion; }
 	public void setTraccion(String traccion) { this.traccion = traccion; }
+	
+	@Override
+	public double calculoCostoMantenimiento(double costo) {
+		return costo+50000;
+	}
 
 	@Override
 	public String toString() {

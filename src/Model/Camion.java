@@ -25,6 +25,11 @@ public class Camion extends Vehiculo {
 
 	public int getNumeroEjes() { return numeroEjes; }
 	public void setNumeroEjes(int numeroEjes) { this.numeroEjes = numeroEjes; }
+	
+	@Override
+	public double calculoCostoMantenimiento(double costo) {
+		return costo+80000;
+	}
 
 	@Override
 	public String toString() {

@@ -25,6 +25,11 @@ public class Motocicleta extends Vehiculo {
 
 	public double getCilindraje() { return cilindraje; }
 	public void setCilindraje(double cilindraje) { this.cilindraje = cilindraje; }
+	
+	@Override
+	public double calculoCostoMantenimiento(double costo) {
+		return costo+30000;
+	}
 
 	@Override
 	public String toString() {

@@ -2,7 +2,9 @@ package Model;
 
 import java.util.ArrayList;
 
-public class Inventario {
+import Controller.VentaInventario;
+
+public class Inventario implements VentaInventario {
 	private int disponibilidad;
 	private Vehiculo vehiculo;
 	
@@ -29,5 +31,11 @@ public class Inventario {
 	@Override
 	public String toString() {
 		return "Inventario [disponibilidad=" + disponibilidad + ", \nvehiculo=" + vehiculo + "]\n";
+	}
+
+	@Override
+	public int disminuirInventario() {
+		this.disponibilidad = this.disponibilidad-1;
+		return this.disponibilidad;
 	}
 }
