@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Inventario {
 	private int disponibilidad;
-	private ArrayList<Vehiculo> vehiculos;
+	private Vehiculo vehiculo;
 	
 	
-	public Inventario(int disponibilidad, ArrayList<Vehiculo> vehiculo) {
+	public Inventario(int disponibilidad, Vehiculo vehiculo) {
 		this.disponibilidad = disponibilidad;
-		this.vehiculos = vehiculo;
+		this.vehiculo = vehiculo;
 	}
 	
 	public int getDisponibilidad() {
@@ -19,10 +19,15 @@ public class Inventario {
 		this.disponibilidad = disponibilidad;
 	}
 	
-	public ArrayList<Vehiculo> getVehiculo() {
-		return vehiculos;
+	public Vehiculo getVehiculo() {
+		return vehiculo;
 	}
-	public void setVehiculo(ArrayList<Vehiculo> vehiculo) {
-		this.vehiculos = vehiculo;
+	public void setVehiculo(Vehiculo vehiculo) {
+		this.vehiculo = vehiculo;
+	}
+
+	@Override
+	public String toString() {
+		return "Inventario [disponibilidad=" + disponibilidad + ", \nvehiculo=" + vehiculo + "]\n";
 	}
 }
